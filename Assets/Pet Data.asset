@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9c7052b03f67246b39a77fc529ae65, type: 3}
+  m_Name: Pet Data
+  m_EditorClassIdentifier: 
+  HungerDecreasePerMinute: 5
+  HappinessDecreasePerMinute: 3
+  HappyDecreasePerMinute: 3
+  SleepnessDecreasePerMinute: 2
+  CleanessDecreasePerMinute: 2
+  LoveDecreasePerMinute: 2
+  XpPerPet: 5
+  CurrentXp: 55
+  CurrentLevel: 1
+  LoveIncreasePerPet: 3
+  BaseMoneyPerMinute: 10
+  MoneyBalance: 70
+  currentFeed: 0
+  currentHapiness: 100
+  currentHappy: 100
+  currentSleep: 1000
+  currentClean: 50
+  currentLove: 33
+  foodItems:
+  - {fileID: 11400000, guid: 5e055d0d6b94b8a439faf22eeb9b77a2, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
