@@ -27,10 +27,12 @@ public class FeedManager : MonoBehaviour
                 foodsOnTable[i].sprite = petData.foodItems[i].itemIcon;
                 foodsOnTable[i].gameObject.SetActive(true);
                 foodsOnTable[i].GetComponent<DraggableFood>().InitValues(petData.foodItems[i]);
+                foodsOnTable[i].transform.parent.GetChild(1).gameObject.SetActive(false);
             }
             else
             {
                 foodsOnTable[i].gameObject.SetActive(false);
+                foodsOnTable[i].transform.parent.GetChild(1).gameObject.SetActive(true);
             }
         }
 

@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 3d704fe603f3e9a469baf329aaa24eae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9107000202050446428
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_0
+  - first:
+      213: -3640241320503500543
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_1
+  - first:
+      213: -2215571176834394742
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_2
+  - first:
+      213: -2166627360554833240
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_3
+  - first:
+      213: -8887235641895459696
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_4
+  - first:
+      213: -342187618976545331
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_5
+  - first:
+      213: -6648359870109103047
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_6
+  - first:
+      213: 6820471515424569365
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_7
+  - first:
+      213: 6531857452595469891
+    second: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 28
+        width: 1182
+        height: 704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab5f53319f6d9180800000000000000
+      internalID: -9107000202050446428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 138
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101a0ba4ec34b7dc0800000000000000
+      internalID: -3640241320503500543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_2
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 3
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a851136d0c5b041e0800000000000000
+      internalID: -2215571176834394742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_3
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 138
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aaac7515e79ee1e0800000000000000
+      internalID: -2166627360554833240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_4
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 3
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09461a135423aa480800000000000000
+      internalID: -8887235641895459696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_5
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 0
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5cd5c6c2e404bf0800000000000000
+      internalID: -342187618976545331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_6
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 0
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c4f233ce74cb3a0800000000000000
+      internalID: -6648359870109103047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_7
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 0
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5183d85f4be27ae50800000000000000
+      internalID: 6820471515424569365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_8
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 0
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ed071feb1d5aa50800000000000000
+      internalID: 6531857452595469891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_0: -9107000202050446428
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_1: -3640241320503500543
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_2: -2215571176834394742
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_3: -2166627360554833240
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_4: -8887235641895459696
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_5: -342187618976545331
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_6: -6648359870109103047
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_7: 6820471515424569365
+      pngtree-kitchen-table-wood-interior-cartoon-picture-image_8111786_8: 6531857452595469891
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

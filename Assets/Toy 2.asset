@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0ddfe4fcc287d468b93f70435f6598, type: 3}
   m_Name: Toy 2
   m_EditorClassIdentifier: 
-  itemName: 
-  itemIcon: {fileID: -7946596245986527695, guid: c44d324bfdc64c74abf4ceb276dca094,
+  itemIcon: {fileID: -4124640094371830397, guid: 6cbdd9feb8fb28f41baeb25063ca8d1e,
     type: 3}
-  price: 0
   loveAmount: 100
   xpAmount: 100

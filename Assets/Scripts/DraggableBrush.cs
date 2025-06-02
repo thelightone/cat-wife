@@ -46,6 +46,7 @@ public class DraggableBrush : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
             {
                 pet.Clean(_cleanAmount);
                 _lastCleanTime = Time.time;
+                AnimManager.instance.SetState(AnimManager.instance.onWash);
                 break;
             }
         }
@@ -56,5 +57,6 @@ public class DraggableBrush : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         _canvasGroup.alpha = 1f;
         _canvasGroup.blocksRaycasts = true;
         _rectTransform.anchoredPosition = _originalPosition;
+        AnimManager.instance.DefState();
     }
 } 

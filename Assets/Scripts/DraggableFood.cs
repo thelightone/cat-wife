@@ -29,6 +29,7 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _originalPosition = _rectTransform.anchoredPosition;
         _canvasGroup.alpha = 0.6f;
         _canvasGroup.blocksRaycasts = false;
+        AnimManager.instance.SetState(AnimManager.instance.beforeFood);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -54,10 +55,11 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 // Возвращаем еду на исходную позицию
                 _rectTransform.anchoredPosition = _originalPosition;
                 gameObject.SetActive(false);
+                AnimManager.instance.SetStateWithTime(AnimManager.instance.afterFood,1);
                 return;
             }
         }
-
+        AnimManager.instance.DefState();
         // Если не попали на питомца, возвращаем еду на исходную позицию
         _rectTransform.anchoredPosition = _originalPosition;
     }
