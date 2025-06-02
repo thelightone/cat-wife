@@ -226,4 +226,10 @@ public class PetData : ScriptableObject
         MoneyBalance = 0;
         Debug.Log($"ResetToDefaultValues - After reset: happiness = {currentHapiness}");
     }
+
+    public void SetParametersPerPet(int xp, int love)
+    {
+        XpPerPet = xp;
+        LoveIncreasePerPet = love;
+    }
 }

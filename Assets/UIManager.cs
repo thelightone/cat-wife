@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text love;
     [SerializeField] private TMP_Text money;
     [SerializeField] private TMP_Text moneyShop;
+    [SerializeField] private TMP_Text moneyToys;
     [SerializeField] private TMP_Text level;
 
     [SerializeField] private Image happinessImg;
@@ -64,6 +65,7 @@ public class UIManager : MonoBehaviour
 
         money.text = _petData.MoneyBalance.ToString();
         moneyShop.text = _petData.MoneyBalance.ToString();
+        moneyToys.text = _petData.MoneyBalance.ToString();
 
         xpImg.fillAmount = (float)_petData.CurrentXp / 1000;
         level.text = _petData.CurrentLevel.ToString();
