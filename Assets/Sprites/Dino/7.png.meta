@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 90b03f888a29d9d478376af2ada98acd
+guid: d1f60f6bcdb79dd40b31500c581294f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5067901003423822457
-    second: photo_2025-06-02_14-41-13 (4)_0
+      213: 6744194760691812639
+    second: photo_2025-06-02_14-41-13 (13)_0
+  - first:
+      213: 151302265657049633
+    second: photo_2025-06-02_14-41-13 (13)_1
+  - first:
+      213: 302038736378143533
+    second: photo_2025-06-02_14-41-13 (13)_2
+  - first:
+      213: -7714987628672199082
+    second: photo_2025-06-02_14-41-13 (13)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: photo_2025-06-02_14-41-13 (4)_0
+      name: photo_2025-06-02_14-41-13 (13)_0
       rect:
         serializedVersion: 2
-        x: 125
-        y: 89
-        width: 726
-        height: 889
+        x: 18
+        y: 0
+        width: 1006
+        height: 983
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9723ce99c1dc45640800000000000000
-      internalID: 5067901003423822457
+      spriteID: f19061f0761389d50800000000000000
+      internalID: 6744194760691812639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: photo_2025-06-02_14-41-13 (13)_1
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 117
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1224336eb98891200800000000000000
+      internalID: 151302265657049633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: photo_2025-06-02_14-41-13 (13)_2
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 80
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d232a3661ae013400800000000000000
+      internalID: 302038736378143533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: photo_2025-06-02_14-41-13 (13)_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 31
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656d572a0abdee490800000000000000
+      internalID: -7714987628672199082
       vertices: []
       indices: 
       edges: []
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      photo_2025-06-02_14-41-13 (4)_0: 5067901003423822457
+      photo_2025-06-02_14-41-13 (13)_0: 6744194760691812639
+      photo_2025-06-02_14-41-13 (13)_1: 151302265657049633
+      photo_2025-06-02_14-41-13 (13)_2: 302038736378143533
+      photo_2025-06-02_14-41-13 (13)_3: -7714987628672199082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

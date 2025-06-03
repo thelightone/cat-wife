@@ -871,12 +871,16 @@ MonoBehaviour:
   - {fileID: 1729743575}
   - {fileID: 1867505634}
   allSprites:
-  - {fileID: -7118702011315013271, guid: 1782ec31027ea5a46a8841eff7dbc675, type: 3}
-  - {fileID: 5067901003423822457, guid: 90b03f888a29d9d478376af2ada98acd, type: 3}
-  - {fileID: -3626852243961983882, guid: ec6db240f7ed5354ca1645a8e609a4ae, type: 3}
-  - {fileID: 9033353047737316087, guid: e62bc6d7b6c34184aa4fdcec97358eef, type: 3}
-  - {fileID: -4993844387224297366, guid: 321e4c787a34a0648805ee084d63e639, type: 3}
-  - {fileID: -5345517059861616479, guid: 6f7d1cd6af337b946b14e41bfa65bf46, type: 3}
+  - {fileID: 21300000, guid: 1782ec31027ea5a46a8841eff7dbc675, type: 3}
+  - {fileID: 21300000, guid: 90b03f888a29d9d478376af2ada98acd, type: 3}
+  - {fileID: 21300000, guid: ec6db240f7ed5354ca1645a8e609a4ae, type: 3}
+  - {fileID: 21300000, guid: e62bc6d7b6c34184aa4fdcec97358eef, type: 3}
+  - {fileID: 21300000, guid: 321e4c787a34a0648805ee084d63e639, type: 3}
+  - {fileID: 21300000, guid: 6f7d1cd6af337b946b14e41bfa65bf46, type: 3}
+  - {fileID: 21300000, guid: d1f60f6bcdb79dd40b31500c581294f1, type: 3}
+  - {fileID: 21300000, guid: 29108cc4c5a02724e80e92cc7e3254ce, type: 3}
+  - {fileID: 21300000, guid: 94c00b56860482943a54de68bfc3c736, type: 3}
+  - {fileID: 21300000, guid: 056662461ddbf9b49aa3a08138051585, type: 3}
 --- !u!114 &78776919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9574,12 +9578,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite:
-  - {fileID: -7118702011315013271, guid: 1782ec31027ea5a46a8841eff7dbc675, type: 3}
-  - {fileID: 5067901003423822457, guid: 90b03f888a29d9d478376af2ada98acd, type: 3}
-  - {fileID: -3626852243961983882, guid: ec6db240f7ed5354ca1645a8e609a4ae, type: 3}
-  - {fileID: 9033353047737316087, guid: e62bc6d7b6c34184aa4fdcec97358eef, type: 3}
-  - {fileID: -4993844387224297366, guid: 321e4c787a34a0648805ee084d63e639, type: 3}
-  - {fileID: -5345517059861616479, guid: 6f7d1cd6af337b946b14e41bfa65bf46, type: 3}
+  - {fileID: 21300000, guid: 1782ec31027ea5a46a8841eff7dbc675, type: 3}
+  - {fileID: 21300000, guid: 90b03f888a29d9d478376af2ada98acd, type: 3}
+  - {fileID: 21300000, guid: ec6db240f7ed5354ca1645a8e609a4ae, type: 3}
+  - {fileID: 21300000, guid: e62bc6d7b6c34184aa4fdcec97358eef, type: 3}
+  - {fileID: 21300000, guid: 321e4c787a34a0648805ee084d63e639, type: 3}
+  - {fileID: 21300000, guid: 6f7d1cd6af337b946b14e41bfa65bf46, type: 3}
+  - {fileID: 21300000, guid: d1f60f6bcdb79dd40b31500c581294f1, type: 3}
+  - {fileID: 21300000, guid: 29108cc4c5a02724e80e92cc7e3254ce, type: 3}
+  - {fileID: 21300000, guid: 94c00b56860482943a54de68bfc3c736, type: 3}
+  - {fileID: 21300000, guid: 056662461ddbf9b49aa3a08138051585, type: 3}
   levelUpScreen: {fileID: 1818807139}
   levelText: {fileID: 1280731915}
   levelUpImage: {fileID: 1450264318}
