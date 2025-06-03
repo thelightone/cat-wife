@@ -8,8 +8,9 @@ public class PetFeed : MonoBehaviour
 
     public void Feed(FoodItem foodItem, int foodId)
     {
-        data.currentFeed += foodItem.feedAmount;
+        data.CurrentFeed += foodItem.feedAmount;
         data.CurrentXp+= foodItem.xpAmount;
+        data.CheckLevelUp();
         uiManager.UpdateBalance();
 
         data.foodItems[foodId] = null;

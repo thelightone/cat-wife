@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,6 +12,8 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private FoodItem _foodItem;
 
     [SerializeField] private int foodId;
+
+    public static event Action onFeed;
 
     private void Awake()
     {
@@ -56,6 +59,7 @@ public class DraggableFood : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 _rectTransform.anchoredPosition = _originalPosition;
                 gameObject.SetActive(false);
                 AnimManager.instance.SetStateWithTime(AnimManager.instance.afterFood,1);
+                onFeed.Invoke();
                 return;
             }
         }

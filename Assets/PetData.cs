@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Tamagotchi/PetConfig")]
 public class PetData : ScriptableObject
@@ -34,13 +35,15 @@ public class PetData : ScriptableObject
     public int BaseMoneyPerMinute = 1;
     public int MoneyBalance;
 
-    public int currentFeed = 1000;
+    [SerializeField] private int currentFeed = 1000;
     public int currentHapiness = 1000;
     public int currentSleep = 1000;
     public int currentClean = 1000;
     public int currentLove = 1000;
 
     public List<FoodItem> foodItems = new List<FoodItem>();
+
+   public static event Action levelUpEvent;
 
     public int CurrentFeed
     {
@@ -50,7 +53,7 @@ public class PetData : ScriptableObject
             currentFeed = Mathf.Clamp(value, 0, 1000);
         }
     }
-  
+
     public int CurrentHapiness
     {
         get => currentHapiness;
@@ -88,11 +91,7 @@ public class PetData : ScriptableObject
     public void ChangeParametersPerPet()
     {
         CurrentXp += XpPerPet;
-        if (CurrentXp > CurrentLevel * 100)
-        {
-            CurrentLevel++;
-            CurrentXp = 0;
-        }
+        CheckLevelUp();
 
         CurrentLove += LoveIncreasePerPet;
     }
@@ -108,7 +107,7 @@ public class PetData : ScriptableObject
         Debug.Log($"SaveGameState - Before save: happiness = {currentHapiness}");
         // Сохраняем время выхода
         PlayerPrefs.SetString(LAST_EXIT_TIME_KEY, DateTime.Now.Ticks.ToString());
-        
+
         // Сохраняем все параметры
         PlayerPrefs.SetInt(CURRENT_FEED_KEY, currentFeed);
         PlayerPrefs.SetInt(CURRENT_HAPPINESS_KEY, currentHapiness);
@@ -119,7 +118,7 @@ public class PetData : ScriptableObject
         PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, CurrentLevel);
         PlayerPrefs.SetInt(MONEY_BALANCE_KEY, MoneyBalance);
         PlayerPrefs.SetInt(IS_SLEEPING_KEY, isSleeping ? 1 : 0);
-        
+
         PlayerPrefs.Save();
         Debug.Log($"SaveGameState - After save: happiness = {currentHapiness}");
     }
@@ -132,7 +131,7 @@ public class PetData : ScriptableObject
             // Загружаем время последнего выхода
             long lastExitTime = long.Parse(PlayerPrefs.GetString(LAST_EXIT_TIME_KEY));
             DateTime lastExit = new DateTime(lastExitTime);
-            
+
             // Вычисляем прошедшее время
             TimeSpan timeSpan = DateTime.Now - lastExit;
             int minutesPassed = (int)timeSpan.TotalMinutes;
@@ -176,11 +175,11 @@ public class PetData : ScriptableObject
     {
         // Сохраняем начальное значение любви
         int initialLove = currentLove;
-        
+
         // Уменьшаем параметры за прошедшее время
         currentFeed = Mathf.Max(0, currentFeed - (HungerDecreasePerMinute * minutes));
         currentHapiness = Mathf.Max(0, currentHapiness - (HappinessDecreasePerMinute * minutes));
-        
+
         // Обработка параметра сна в зависимости от состояния
         if (isSleeping)
         {
@@ -194,7 +193,7 @@ public class PetData : ScriptableObject
             // Если не спит, уменьшаем как обычно
             currentSleep = Mathf.Max(0, currentSleep - (SleepnessDecreasePerMinute * minutes));
         }
-        
+
         currentClean = Mathf.Max(0, currentClean - (CleanessDecreasePerMinute * minutes));
         currentLove = Mathf.Max(0, currentLove - (LoveDecreasePerMinute * minutes));
 
@@ -208,7 +207,7 @@ public class PetData : ScriptableObject
             totalMoney += BaseMoneyPerMinute * loveMultiplier;
             Debug.Log(loveMultiplier + " " + totalMoney);
         }
-        
+
         MoneyBalance += Mathf.RoundToInt(totalMoney);
         Debug.Log($"Money calculation: Initial love = {initialLove}, Final love = {currentLove}, Minutes = {minutes}, Money earned = {Mathf.RoundToInt(totalMoney)}");
     }
@@ -231,5 +230,16 @@ public class PetData : ScriptableObject
     {
         XpPerPet = xp;
         LoveIncreasePerPet = love;
+    }
+
+    public void CheckLevelUp()
+    {
+        if (CurrentXp > CurrentLevel * 100 && CurrentLevel<=10)
+        {
+            CurrentLevel++;
+            CurrentXp = 0;
+            SaveGameState();
+            levelUpEvent.Invoke();
+        }
     }
 }

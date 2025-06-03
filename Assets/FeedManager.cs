@@ -10,12 +10,14 @@ public class FeedManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateInventory(); 
+        UpdateInventory();
+
     }
 
     private void OnEnable()
     {
         UpdateInventory();
+        DraggableFood.onFeed += UpdateInventory;
     }
 
     private void UpdateInventory()
@@ -36,5 +38,10 @@ public class FeedManager : MonoBehaviour
             }
         }
 
+    }
+
+    void OnDisable()
+    {
+        DraggableFood.onFeed -= UpdateInventory;
     }
 }

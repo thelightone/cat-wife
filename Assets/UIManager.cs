@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
         love.text = (_petData.CurrentLove / 10).ToString() + "%";
 
         happinessImg.fillAmount = (float)_petData.CurrentHapiness/1000;
-        hungerImg.fillAmount = (float)_petData.currentFeed / 1000;
+        hungerImg.fillAmount = (float)_petData.CurrentFeed / 1000;
         cleanessImg.fillAmount = (float)_petData.CurrentClean / 1000;
         energyImg.fillAmount = (float)_petData.CurrentSleep / 1000;
         loveImg.fillAmount = (float)_petData.CurrentLove / 1000;
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
         moneyShop.text = _petData.MoneyBalance.ToString();
         moneyToys.text = _petData.MoneyBalance.ToString();
 
-        xpImg.fillAmount = (float)_petData.CurrentXp / 1000;
+        xpImg.fillAmount = (float)_petData.CurrentXp / (_petData.CurrentLevel*100);
         level.text = _petData.CurrentLevel.ToString();
     }
 }
