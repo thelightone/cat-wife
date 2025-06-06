@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: aaa79a982b3725040a067f7dd2abcf48
+guid: 02062b9c570d55346a320f9d43dd4d59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6877684325786777966
-    second: photo_2025-06-02_14-41-13 (2)_0
-  - first:
-      213: 2145797794775558297
-    second: photo_2025-06-02_14-41-13 (2)_1
+      213: -3324215111635510982
+    second: photo_2025-06-02_14-41-13 (17)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: photo_2025-06-02_14-41-13 (2)_0
+      name: photo_2025-06-02_14-41-13 (17)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 101
-        width: 873
-        height: 868
+        x: 142
+        y: 86
+        width: 790
+        height: 853
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e69facb6471727f50800000000000000
-      internalID: 6877684325786777966
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: photo_2025-06-02_14-41-13 (2)_1
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 967
-        width: 48
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 998e965b9b767cd10800000000000000
-      internalID: 2145797794775558297
+      spriteID: a39daf9e7f30ed1d0800000000000000
+      internalID: -3324215111635510982
       vertices: []
       indices: 
       edges: []
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      photo_2025-06-02_14-41-13 (2)_0: 6877684325786777966
-      photo_2025-06-02_14-41-13 (2)_1: 2145797794775558297
+      photo_2025-06-02_14-41-13 (17)_0: -3324215111635510982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

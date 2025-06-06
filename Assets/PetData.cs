@@ -204,7 +204,7 @@ public class PetData : ScriptableObject
             // Рассчитываем значение любви для каждой минуты
             float loveForMinute = Mathf.Max(0, initialLove - (LoveDecreasePerMinute * i));
             float loveMultiplier = loveForMinute / 1000f;
-            totalMoney += BaseMoneyPerMinute * loveMultiplier;
+            totalMoney += BaseMoneyPerMinute * loveMultiplier *CurrentLevel;
             Debug.Log(loveMultiplier + " " + totalMoney);
         }
 
@@ -234,7 +234,7 @@ public class PetData : ScriptableObject
 
     public void CheckLevelUp()
     {
-        if (CurrentXp > CurrentLevel * 100 && CurrentLevel<=10)
+        if (CurrentXp > CurrentLevel * CurrentLevel * 100 && CurrentLevel<=10)
         {
             CurrentLevel++;
             CurrentXp = 0;

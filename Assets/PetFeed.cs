@@ -9,7 +9,7 @@ public class PetFeed : MonoBehaviour
     public void Feed(FoodItem foodItem, int foodId)
     {
         data.CurrentFeed += foodItem.feedAmount;
-        data.CurrentXp+= foodItem.xpAmount;
+        data.CurrentXp+= foodItem.xpAmount*data.CurrentLevel;
         data.CheckLevelUp();
         uiManager.UpdateBalance();
 
