@@ -1,3 +1,4 @@
+using Playgama;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -104,70 +105,65 @@ public class PetData : ScriptableObject
 
     public void SaveGameState()
     {
-        Debug.Log($"SaveGameState - Before save: happiness = {currentHapiness}");
-        // Сохраняем время выхода
-        PlayerPrefs.SetString(LAST_EXIT_TIME_KEY, DateTime.Now.Ticks.ToString());
 
-        // Сохраняем все параметры
-        PlayerPrefs.SetInt(CURRENT_FEED_KEY, currentFeed);
-        PlayerPrefs.SetInt(CURRENT_HAPPINESS_KEY, currentHapiness);
-        PlayerPrefs.SetInt(CURRENT_SLEEP_KEY, currentSleep);
-        PlayerPrefs.SetInt(CURRENT_CLEAN_KEY, currentClean);
-        PlayerPrefs.SetInt(CURRENT_LOVE_KEY, currentLove);
-        PlayerPrefs.SetInt(CURRENT_XP_KEY, CurrentXp);
-        PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, CurrentLevel);
-        PlayerPrefs.SetInt(MONEY_BALANCE_KEY, MoneyBalance);
-        PlayerPrefs.SetInt(IS_SLEEPING_KEY, isSleeping ? 1 : 0);
-
-        PlayerPrefs.Save();
-        Debug.Log($"SaveGameState - After save: happiness = {currentHapiness}");
+        var keys = new List<string>() { LAST_EXIT_TIME_KEY, CURRENT_FEED_KEY, CURRENT_HAPPINESS_KEY, CURRENT_SLEEP_KEY, CURRENT_CLEAN_KEY, CURRENT_LOVE_KEY, CURRENT_XP_KEY, CURRENT_LEVEL_KEY, MONEY_BALANCE_KEY, IS_SLEEPING_KEY };
+        var data = new List<object>() { DateTime.Now.Ticks.ToString(), currentFeed,currentHapiness,currentSleep,currentClean,currentLove,CurrentXp,CurrentLevel,MoneyBalance, isSleeping ? 1 : 0 };
+        Bridge.storage.Set(keys, data, OnStorageSetCompleted);
     }
 
+    private void OnStorageSetCompleted(bool success)
+    {
+        Debug.Log($"OnStorageSetCompleted, success: {success}");
+    }
     public void LoadGameState()
     {
-        Debug.Log($"LoadGameState - Start: happiness = {currentHapiness}");
-        if (PlayerPrefs.HasKey(LAST_EXIT_TIME_KEY))
+        Bridge.storage.Get(new List<string>() { LAST_EXIT_TIME_KEY, CURRENT_FEED_KEY, CURRENT_HAPPINESS_KEY, CURRENT_SLEEP_KEY, CURRENT_CLEAN_KEY, CURRENT_LOVE_KEY, CURRENT_XP_KEY, CURRENT_LEVEL_KEY, MONEY_BALANCE_KEY, IS_SLEEPING_KEY }, OnStorageGetCompleted);
+        
+    }
+
+    private void OnStorageGetCompleted(bool success, List<string> data)
+    {
+        if (success)
         {
-            // Загружаем время последнего выхода
-            long lastExitTime = long.Parse(PlayerPrefs.GetString(LAST_EXIT_TIME_KEY));
-            DateTime lastExit = new DateTime(lastExitTime);
-
-            // Вычисляем прошедшее время
-            TimeSpan timeSpan = DateTime.Now - lastExit;
-            int minutesPassed = (int)timeSpan.TotalMinutes;
-
-            Debug.Log($"Last exit time: {lastExit}");
-            Debug.Log($"Current time: {DateTime.Now}");
-            Debug.Log($"Time span: {timeSpan}");
-            Debug.Log($"Minutes passed: {minutesPassed}");
-
-            // Загружаем сохраненные значения
-            currentFeed = PlayerPrefs.GetInt(CURRENT_FEED_KEY, currentFeed);
-            currentHapiness = PlayerPrefs.GetInt(CURRENT_HAPPINESS_KEY, currentHapiness);
-            currentSleep = PlayerPrefs.GetInt(CURRENT_SLEEP_KEY, currentSleep);
-            currentClean = PlayerPrefs.GetInt(CURRENT_CLEAN_KEY, currentClean);
-            currentLove = PlayerPrefs.GetInt(CURRENT_LOVE_KEY, currentLove);
-            CurrentXp = PlayerPrefs.GetInt(CURRENT_XP_KEY, CurrentXp);
-            CurrentLevel = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY, CurrentLevel);
-            MoneyBalance = PlayerPrefs.GetInt(MONEY_BALANCE_KEY, MoneyBalance);
-            isSleeping = PlayerPrefs.GetInt(IS_SLEEPING_KEY, 0) == 1;
-
-            Debug.Log($"LoadGameState - After loading: happiness = {currentHapiness}, isSleeping = {isSleeping}");
-
-            if (minutesPassed > 0)
+            if (data[0]!=null)
             {
-                Debug.Log($"Updating parameters for {minutesPassed} minutes");
-                // Обновляем параметры с учетом прошедшего времени
-                UpdateParametersForTimePassed(minutesPassed);
-                Debug.Log($"LoadGameState - After time update: happiness = {currentHapiness}");
+                // Загружаем время последнего выхода
+                long lastExitTime = long.Parse(data[0]);
+                DateTime lastExit = new DateTime(lastExitTime);
+
+                // Вычисляем прошедшее время
+                TimeSpan timeSpan = DateTime.Now - lastExit;
+                int minutesPassed = (int)timeSpan.TotalMinutes;
+
+
+                // Загружаем сохраненные значения
+                currentFeed = Convert.ToInt32(data[1]);
+                currentHapiness = Convert.ToInt32(data[2]);
+                currentSleep = Convert.ToInt32(data[3]);
+                currentClean = Convert.ToInt32(data[4]);
+                currentLove = Convert.ToInt32(data[5]);
+                CurrentXp = Convert.ToInt32(data[6]);
+                CurrentLevel = Convert.ToInt32(data[7]);
+                MoneyBalance = Convert.ToInt32(data[8]);
+                isSleeping = Convert.ToInt32(data[9]) == 1;
+
+                Debug.Log($"LoadGameState - After loading: happiness = {currentHapiness}, isSleeping = {isSleeping}");
+
+                if (minutesPassed > 0)
+                {
+                    Debug.Log($"Updating parameters for {minutesPassed} minutes");
+                    // Обновляем параметры с учетом прошедшего времени
+                    UpdateParametersForTimePassed(minutesPassed);
+                    Debug.Log($"LoadGameState - After time update: happiness = {currentHapiness}");
+                }
             }
-        }
-        else
-        {
-            Debug.Log("No saved data found, resetting to default values");
-            // Если нет сохраненных данных, устанавливаем начальные значения
-            ResetToDefaultValues();
-            Debug.Log($"LoadGameState - After reset: happiness = {currentHapiness}");
+            else
+            {
+                Debug.Log("No saved data found, resetting to default values");
+                // Если нет сохраненных данных, устанавливаем начальные значения
+                ResetToDefaultValues();
+                Debug.Log($"LoadGameState - After reset: happiness = {currentHapiness}");
+            }
         }
     }
 
@@ -215,11 +211,11 @@ public class PetData : ScriptableObject
     private void ResetToDefaultValues()
     {
         Debug.Log($"ResetToDefaultValues - Before reset: happiness = {currentHapiness}");
-        currentFeed = 1000;
-        currentHapiness = 1000;
-        currentSleep = 1000;
-        currentClean = 1000;
-        currentLove = 1000;
+        currentFeed = 500;
+        currentHapiness = 500;
+        currentSleep = 500;
+        currentClean = 500;
+        currentLove = 500;
         CurrentXp = 0;
         CurrentLevel = 1;
         MoneyBalance = 0;
