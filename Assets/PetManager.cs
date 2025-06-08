@@ -16,5 +16,6 @@ public class PetManager : MonoBehaviour
         _petData.ChangeParametersPerPet();
         UIManager.instance.UpdateBalance();
         AnimManager.instance.SetStateWithTime(AnimManager.instance.onPet, 1);
+        AudioManager.instance.Pet();
     }
 }

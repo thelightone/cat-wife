@@ -12,24 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9c7052b03f67246b39a77fc529ae65, type: 3}
   m_Name: Pet Data
   m_EditorClassIdentifier: 
-  HungerDecreasePerMinute: 5
-  HappinessDecreasePerMinute: 3
-  HappyDecreasePerMinute: 3
-  SleepnessDecreasePerMinute: 2
+  isSleeping: 0
+  HungerDecreasePerMinute: 4
+  HappinessDecreasePerMinute: 2
+  SleepnessDecreasePerMinute: 1
   CleanessDecreasePerMinute: 2
-  LoveDecreasePerMinute: 2
-  XpPerPet: 5
-  CurrentXp: 55
+  LoveDecreasePerMinute: 3
+  XpPerPet: 1
+  CurrentXp: 0
   CurrentLevel: 1
-  LoveIncreasePerPet: 3
+  LoveIncreasePerPet: 5
   BaseMoneyPerMinute: 10
-  MoneyBalance: 70
-  currentFeed: 0
-  currentHapiness: 100
-  currentHappy: 100
-  currentSleep: 1000
-  currentClean: 50
-  currentLove: 33
+  MoneyBalance: 0
+  currentFeed: 500
+  currentHapiness: 500
+  currentSleep: 500
+  currentClean: 500
+  currentLove: 500
   foodItems:
   - {fileID: 11400000, guid: 5e055d0d6b94b8a439faf22eeb9b77a2, type: 2}
   - {fileID: 0}

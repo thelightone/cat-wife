@@ -14,5 +14,7 @@ public class PetFeed : MonoBehaviour
         uiManager.UpdateBalance();
 
         data.foodItems[foodId] = null;
+
+        AudioManager.instance.Eat();
     }
 }

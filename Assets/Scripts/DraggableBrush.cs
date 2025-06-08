@@ -29,6 +29,7 @@ public class DraggableBrush : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         _originalPosition = _rectTransform.anchoredPosition;
         _canvasGroup.alpha = 0.8f;
         _canvasGroup.blocksRaycasts = false;
+        AudioManager.instance.StartShower();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -58,5 +59,6 @@ public class DraggableBrush : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         _canvasGroup.blocksRaycasts = true;
         _rectTransform.anchoredPosition = _originalPosition;
         AnimManager.instance.DefState();
+        AudioManager.instance.StopShower(); 
     }
 } 

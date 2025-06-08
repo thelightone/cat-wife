@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: -8239233479992203220, guid: 153a56df314db1048bbbb3b4e0b07b36,
     type: 3}
-  loveAmount: 100
-  xpAmount: 100
+  loveAmount: 30
+  xpAmount: 10
