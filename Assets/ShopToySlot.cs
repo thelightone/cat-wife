@@ -1,3 +1,5 @@
+using Playgama;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,14 +11,25 @@ public class ShopToySlot : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("toy0", 1);
+        Bridge.storage.Set("toy0", 1, OnStorageSetCompleted);
+       // PlayerPrefs.SetInt("toy0", 1);
 
         transform.GetComponentInChildren<TMP_Text>().text = price.ToString();
 
-        if(PlayerPrefs.GetInt("toy"+toyId,0)==1)
+        Bridge.storage.Get("toy" + toyId, OnStorageGetCompleted);
+    }
+
+    private void OnStorageGetCompleted(bool success, string data)
+    {
+        if (data=="1")
         {
             Unlock();
         }
+    }
+
+    private void OnStorageSetCompleted(bool obj)
+    {
+        Debug.Log("toy saved");
     }
 
     public void Highlight()
@@ -36,7 +49,8 @@ public class ShopToySlot : MonoBehaviour
 
     public void Buy()
     {
-        PlayerPrefs.SetInt("toy" + toyId, 1);
+        Bridge.storage.Set("toy"+toyId, 1, OnStorageSetCompleted);
+        //PlayerPrefs.SetInt("toy" + toyId, 1);
     }
 
 }

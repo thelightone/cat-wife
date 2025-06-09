@@ -19,7 +19,7 @@ public class PetData : ScriptableObject
     private const string MONEY_BALANCE_KEY = "MoneyBalance";
     private const string IS_SLEEPING_KEY = "IsSleeping";
 
-    public bool isSleeping;
+    public bool isSleeping=false;
 
     public int HungerDecreasePerMinute = 5;
     public int HappinessDecreasePerMinute = 3;
@@ -52,6 +52,7 @@ public class PetData : ScriptableObject
         set
         {
             currentFeed = Mathf.Clamp(value, 0, 1000);
+            SaveGameState();
         }
     }
 
@@ -61,6 +62,7 @@ public class PetData : ScriptableObject
         set
         {
             currentHapiness = Mathf.Clamp(value, 0, 1000);
+            SaveGameState();
         }
     }
     public int CurrentSleep
@@ -69,6 +71,7 @@ public class PetData : ScriptableObject
         set
         {
             currentSleep = Mathf.Clamp(value, 0, 1000);
+            SaveGameState();
         }
     }
     public int CurrentClean
@@ -77,6 +80,7 @@ public class PetData : ScriptableObject
         set
         {
             currentClean = Mathf.Clamp(value, 0, 1000);
+            SaveGameState();
         }
     }
     public int CurrentLove
@@ -84,7 +88,9 @@ public class PetData : ScriptableObject
         get => currentLove;
         set
         {
+
             currentLove = Mathf.Clamp(value, 0, 1000);
+            SaveGameState();
         }
     }
 
@@ -95,12 +101,16 @@ public class PetData : ScriptableObject
         CheckLevelUp();
 
         CurrentLove += LoveIncreasePerPet;
+        UIManager.instance.UpdateBalance();
+        SaveGameState();
     }
 
     public void ChangeMoney(int amount)
     {
         MoneyBalance += amount;
         if (MoneyBalance < 0) MoneyBalance = 0;
+        SaveGameState();
+        UIManager.instance.UpdateBalance();
     }
 
     public void SaveGameState()
@@ -201,11 +211,11 @@ public class PetData : ScriptableObject
             float loveForMinute = Mathf.Max(0, initialLove - (LoveDecreasePerMinute * i));
             float loveMultiplier = loveForMinute / 1000f;
             totalMoney += BaseMoneyPerMinute * loveMultiplier *CurrentLevel;
-            Debug.Log(loveMultiplier + " " + totalMoney);
         }
 
         MoneyBalance += Mathf.RoundToInt(totalMoney);
         Debug.Log($"Money calculation: Initial love = {initialLove}, Final love = {currentLove}, Minutes = {minutes}, Money earned = {Mathf.RoundToInt(totalMoney)}");
+        SaveGameState();
     }
 
     private void ResetToDefaultValues()
@@ -220,6 +230,7 @@ public class PetData : ScriptableObject
         CurrentLevel = 1;
         MoneyBalance = 0;
         Debug.Log($"ResetToDefaultValues - After reset: happiness = {currentHapiness}");
+        SaveGameState();
     }
 
     public void SetParametersPerPet(int xp, int love)

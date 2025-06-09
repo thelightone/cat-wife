@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using Playgama;
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,7 +13,12 @@ public class GalleryManager : MonoBehaviour
 
     private void OnEnable()
     {
-        var curLevel = PlayerPrefs.GetInt("CurrentLevel", 0);
+        Bridge.storage.Get("CurrentLevel", OnStorageGetCompleted);
+    }
+
+    private void OnStorageGetCompleted(bool success, string data)
+    {
+        var curLevel = Convert.ToInt32(data);
         Debug.Log("CURRENT LEVEL: "+curLevel);
         for (int i = 0; i<curLevel-1; i++)
         {

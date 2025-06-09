@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using Playgama;
 
 public class PetSleep : MonoBehaviour
 {
@@ -102,16 +103,27 @@ public class PetSleep : MonoBehaviour
     {
         if (_petData.isSleeping)
         {
-            PlayerPrefs.SetString(SLEEP_START_TIME_KEY, _sleepStartTime.Ticks.ToString());
+            Bridge.storage.Set(SLEEP_START_TIME_KEY, _sleepStartTime.Ticks.ToString(), OnStorageSetCompleted);
+          //  PlayerPrefs.SetString(SLEEP_START_TIME_KEY, _sleepStartTime.Ticks.ToString());
             PlayerPrefs.Save();
         }
     }
 
+    private void OnStorageSetCompleted(bool obj)
+    {
+        Debug.Log("Start sleep");
+    }
+
     private void LoadSleepState()
     {
-        if (!PlayerPrefs.HasKey(SLEEP_START_TIME_KEY)) return;
+        Bridge.storage.Get(SLEEP_START_TIME_KEY, OnStorageGetCompleted);
+    }
 
-        long sleepStartTicks = long.Parse(PlayerPrefs.GetString(SLEEP_START_TIME_KEY));
+    private void OnStorageGetCompleted(bool success, string data)
+    {
+        if (data == null) return;
+
+        long sleepStartTicks = long.Parse(data);
         _sleepStartTime = new DateTime(sleepStartTicks);
         _petData.isSleeping = true;
         _sleepingVisual.SetActive(true);

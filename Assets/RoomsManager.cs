@@ -1,4 +1,7 @@
-using NUnit.Framework;
+
+using Playgama;
+using Playgama.Modules.Advertisement;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +17,8 @@ public class RoomsManager : MonoBehaviour
     [SerializeField] private GameObject tutorShower1;
     [SerializeField] private GameObject tutorFeed1;
 
+    private int _roomId;
+
 
     private void Awake()
     {
@@ -25,10 +30,38 @@ public class RoomsManager : MonoBehaviour
         {
             OpenRoom(4);
         }
+     
+        Bridge.advertisement.interstitialStateChanged += OnInterstitialStateChanged;
+        OnInterstitialStateChanged(Bridge.advertisement.interstitialState);
     }
 
-    public void OpenRoom (int roomId)
+    private void OnInterstitialStateChanged(InterstitialState state)
     {
+        Debug.Log(state.ToString());
+
+       switch(state)
+        {
+            case InterstitialState.Loading:
+                break;
+            case InterstitialState.Opened:
+                AudioManager.instance.musicSource.volume = 0;
+                break;
+            case InterstitialState.Closed:
+                AudioManager.instance.musicSource.volume = 1;
+                break;
+            case InterstitialState.Failed:
+                AudioManager.instance.musicSource.volume = 1;
+                break;
+        }
+    }
+
+
+    public void OpenRoom(int roomId)
+    {
+
+        Bridge.advertisement.ShowInterstitial();
+
+        _roomId = roomId;
         for (int i = 0; i < roomsButs.Count; i++)
         {
             rooms[i].SetActive(false);
@@ -38,23 +71,37 @@ public class RoomsManager : MonoBehaviour
         rooms[roomId].SetActive(true);
         roomsButs[roomId].transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
 
-        if(roomId ==4 && PlayerPrefs.GetInt("tutorGost")==0)
+        Bridge.storage.Get(new List<string>() { "tutorGost", "tutorShower" ,"tutorFeed" }, OnStorageGetCompleted);
+    }
+
+    private void OnStorageGetCompleted(bool success, List<string> data)
+    {
+
+        if (_roomId ==4 && data[0] ==null)
         {
-            PlayerPrefs.SetInt("tutorGost", 1);
+            Bridge.storage.Set("tutorGost", 1, OnStorageSetCompleted);
+            //PlayerPrefs.SetInt("tutorGost", 1);
             tutorGost1.SetActive(true);
         }
 
-        if (roomId == 0 && PlayerPrefs.GetInt("tutorShower") == 0)
+        if (_roomId == 0 && data[1] == null)
         {
-            PlayerPrefs.SetInt("tutorShower", 1);
+            Bridge.storage.Set("tutorShower", 1, OnStorageSetCompleted);
+            //PlayerPrefs.SetInt("tutorShower", 1);
             tutorShower1.SetActive(true);
         }
 
-        if (roomId == 3 && PlayerPrefs.GetInt("tutorFeed") == 0)
+        if (_roomId == 3 && data[2] == null)
         {
-            PlayerPrefs.SetInt("tutorFeed", 1);
+            Bridge.storage.Set("tutorFeed", 1, OnStorageSetCompleted);
+           // PlayerPrefs.SetInt("tutorFeed", 1);
             tutorFeed1.SetActive(true);
         }
 
+    }
+
+    private void OnStorageSetCompleted(bool obj)
+    {
+        Debug.Log("Open room");
     }
 }

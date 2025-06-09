@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         scores += Time.deltaTime;
-        _scoresText.text = "SCORES: "+Convert.ToInt32(scores).ToString();
+        _scoresText.text = "ОЧКИ: "+Convert.ToInt32(scores).ToString();
 
     }
 

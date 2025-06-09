@@ -19,16 +19,16 @@ MonoBehaviour:
   CleanessDecreasePerMinute: 2
   LoveDecreasePerMinute: 3
   XpPerPet: 1
-  CurrentXp: 0
+  CurrentXp: 5
   CurrentLevel: 1
   LoveIncreasePerPet: 5
   BaseMoneyPerMinute: 10
   MoneyBalance: 0
-  currentFeed: 500
-  currentHapiness: 500
-  currentSleep: 500
-  currentClean: 500
-  currentLove: 500
+  currentFeed: 300
+  currentHapiness: 400
+  currentSleep: 450
+  currentClean: 400
+  currentLove: 375
   foodItems:
   - {fileID: 11400000, guid: 5e055d0d6b94b8a439faf22eeb9b77a2, type: 2}
   - {fileID: 0}

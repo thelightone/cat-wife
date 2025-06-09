@@ -1,3 +1,5 @@
+using Playgama;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -23,8 +25,13 @@ public class LevelsManager : MonoBehaviour
 
     public void OnLevelUp()
     {
-        var curLevel = PlayerPrefs.GetInt("CurrentLevel", 0);
-        levelText.text = "LEVEL "+curLevel.ToString();
+        Bridge.storage.Get("CurrentLevel", OnStorageGetCompleted);
+    }
+
+    private void OnStorageGetCompleted(bool success, string data)
+    {
+        var curLevel = Convert.ToInt32(data);
+        levelText.text = "спнбемэ "+curLevel.ToString();
         levelUpImage.sprite = sprite[curLevel-2];
         levelUpScreen.SetActive(true);
     }

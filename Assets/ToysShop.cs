@@ -1,3 +1,5 @@
+using Playgama;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
@@ -14,7 +16,12 @@ public class ToysShop : MonoBehaviour
 
     private void Start()
     {
-        var curId = PlayerPrefs.GetInt("selectedToy", 0);
+        Bridge.storage.Get("selectedToy", OnStorageGetCompleted);
+    }
+
+    private void OnStorageGetCompleted(bool success, string data)
+    {
+        var curId = Convert.ToInt32(data);
         selectedItem = allItems[curId];
         Equip();
     }
@@ -47,7 +54,13 @@ public class ToysShop : MonoBehaviour
         {
             equipedItem = selectedItem;
             equipedItemImage.sprite = selectedItem.transform.GetChild(0).GetComponent<Image>().sprite;
-            PlayerPrefs.SetInt("selectedToy",selectedItem.toyId);
+            Bridge.storage.Set("selectedToy", selectedItem.toyId, OnStorageSetCompleted);
+         // PlayerPrefs.SetInt("selectedToy",selectedItem.toyId);
         }
+    }
+
+    private void OnStorageSetCompleted(bool obj)
+    {
+        Debug.Log("select Toy");
     }
 }
